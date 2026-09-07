@@ -1,0 +1,9 @@
+node_modules/
+.cache/
+.pnpm/
+.pnpm-store/
+generated-assets/
+site.tar.gz
+
+public/
+beanstalk-game.zip

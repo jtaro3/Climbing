@@ -1,0 +1,1 @@
+{"name":"beanstalk-adventure","version":"1.0.0","private":true,"scripts":{"build":"node build.cjs","dev":"node serve.cjs","test":"node tests/engine.test.cjs"}}

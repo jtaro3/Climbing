@@ -15,9 +15,18 @@
 
 ## デザイン差し替え
 
-`assets/storybook.png` が仮の画像素材です。`assets.js` の `BEAN_ASSETS.sprites` にそれぞれの画像設定があります。
+仮素材は透明背景の個別PNGです。`assets.js` の `BEAN_ASSETS.sprites` にそれぞれの画像設定があります。
 
-アトラスを差し替える場合は `atlas` と `crop: [左端, 上端, 幅, 高さ]` を変更します。個別画像を使う場合は、対象の設定を `player: { src: 'assets/player.png', width: 49, height: 58 }` のように変更してください。葉・巨人・つるも `src` に対応します。背景画像は `background: { src: 'assets/background.png' }` で差し替えられます。背景の色は `game.js` の描画関数にあります。
+| 素材 | ファイル | 画像サイズ |
+| --- | --- | --- |
+| プレイヤー | `assets/player.png` | 445 × 530 px |
+| 葉 | `assets/leaf.png` | 705 × 345 px |
+| 巨人 | `assets/giant.png` | 805 × 714 px |
+| つる | `assets/vine.png` | 390 × 759 px |
+
+元の `assets/storybook.png` は保管用です。ゲームは4枚の個別PNGを読み込みます。元画像で使用していた範囲をそのまま切り出しており、色・透明度・表示サイズは維持しています。
+
+差し替えるPNGを同じファイル名で保存すると反映できます。ファイル名を変更する場合は、対象の `src` を変更してください。プレイヤーの例は `player: { src: 'assets/player.png', width: 49, height: 58 }` です。背景画像は `background: { src: 'assets/background.png' }` で差し替えられます。背景の色は `game.js` の描画関数にあります。
 
 プレイヤーの表示サイズは `width` / `height`、当たり判定は `BEAN_CONFIG.playerHalfWidth`（着地は足元の座標で判定）、物理設定は `gravity` / `jumpSpeed` / `moveSpeed` / `maxWindSpeed` で独立して設定できます。葉の足場の幅は `engine.js` の `platforms` の `w`、高さは `y` です。画像を変更した後は `node build.cjs` で配信用ファイルを更新してください。
 
